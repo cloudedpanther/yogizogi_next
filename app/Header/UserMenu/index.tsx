@@ -13,7 +13,9 @@ export const UserMenu = () => {
   if (isLoggedIn) {
     return (
       <>
-        <button onClick={handleLogout}>로그아웃</button>
+        <button className="btn" onClick={handleLogout}>
+          로그아웃
+        </button>
       </>
     );
   }
