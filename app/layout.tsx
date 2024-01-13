@@ -21,9 +21,9 @@ export default function RootLayout({
   return (
     <html lang="ko-KR">
       <body className={inter.className}>
-        <div className="relative min-w-[375px]">
+        <div className="relative min-w-[375px] w-100vw">
           <Header />
-          {children}
+          <main className="pt-[68px]">{children}</main>
         </div>
       </body>
     </html>
