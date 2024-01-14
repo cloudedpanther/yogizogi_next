@@ -38,14 +38,12 @@ export const SearchBar = () => {
           <input
             {...StartDate}
             type="date"
-            min={'2024-01-01'}
             className="border border-slate-300 rounded-lg h-12 pr-2 w-32 text-end"
           />
           <p>~</p>
           <input
             {...EndDate}
             type="date"
-            max={'2025-01-01'}
             className="border border-slate-300 rounded-lg h-12 pr-2 w-32 text-end"
           />
         </div>
@@ -61,8 +59,6 @@ export const SearchBar = () => {
           <input
             {...People}
             type="number"
-            min={0}
-            max={8}
             readOnly
             className="w-6 text-center ml-3"
           />
