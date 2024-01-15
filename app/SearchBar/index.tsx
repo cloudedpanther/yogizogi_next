@@ -1,11 +1,22 @@
 'use client';
 
-import { useSearchForm } from './hooks/useSearchForm';
+import { SubmitErrorHandler, SubmitHandler } from 'react-hook-form';
+import { SearchInputs, useSearchForm } from './hooks/useSearchForm';
 
 export const SearchBar = () => {
   const { Keyword, StartDate, EndDate, People, methods } = useSearchForm();
 
-  const onSubmit = () => console.log(methods.watch());
+  const onValid: SubmitHandler<SearchInputs> = (data) => {
+    // TODO: change to navigating to search
+    console.log(data);
+  };
+
+  const onInValid: SubmitErrorHandler<SearchInputs> = (errors) => {
+    const errorMessage = Object.values(errors)[0].message;
+
+    // TODO: change to modal popup
+    console.log('error: ', errorMessage);
+  };
 
   const addPeople = () => {
     if (People.value >= 8) return;
@@ -21,7 +32,7 @@ export const SearchBar = () => {
 
   return (
     <form
-      onSubmit={methods.handleSubmit(onSubmit)}
+      onSubmit={methods.handleSubmit(onValid, onInValid)}
       className="w-[800px] h-[120px] shadow flex items-center justify-between rounded-xl px-4">
       <div>
         <p className="font-bold mb-2 ml-1 text-slate-600">지역</p>
