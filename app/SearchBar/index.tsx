@@ -75,7 +75,7 @@ export default function SearchBar() {
           />
           <button
             onClick={addPeople}
-            className="btn btn-sm bg-black text-white hover:text-black">
+            className="btn btn-sm bg-slate-900 text-white hover:text-black">
             +
           </button>
         </div>

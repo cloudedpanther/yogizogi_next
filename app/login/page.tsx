@@ -23,18 +23,35 @@ export default function Login() {
       <h2 className="text-center text-2xl font-bold">로그인</h2>
       <form
         onSubmit={methods.handleSubmit(onValid, onInValid)}
-        className="shadow rounded-xl p-4 flex flex-col gap-2 w-80">
+        className="shadow rounded-xl p-8 flex flex-col gap-4 w-[500px]">
+        <div className="flex flex-col gap-1">
+          <label htmlFor="email" className="text-sm ml-1 text-slate-600">
+            Email
+          </label>
+          <input
+            {...Email}
+            type="email"
+            id="email"
+            placeholder="이메일을 입력해주세요."
+            className="input border border-slate-300 w-full focus:outline-none focus-within:outline-none h-12"
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="password" className="text-sm ml-1 text-slate-600">
+            Password
+          </label>
+          <input
+            {...Password}
+            type="password"
+            id="password"
+            placeholder="비밀번호를 입력해주세요."
+            className="input border border-slate-300 w-full focus:outline-none focus-within:outline-none h-12"
+          />
+        </div>
         <input
-          {...Email}
-          type="email"
-          placeholder="이메일을 입력해주세요."
-          className="input border border-slate-300 w-full focus:outline-none focus-within:outline-none h-12"
-        />
-        <input
-          {...Password}
-          type="password"
-          placeholder="비밀번호를 입력해주세요."
-          className="input border border-slate-300 w-full focus:outline-none focus-within:outline-none h-12"
+          type="submit"
+          value="Login"
+          className="btn bg-slate-900 text-white hover:text-black"
         />
       </form>
     </div>
