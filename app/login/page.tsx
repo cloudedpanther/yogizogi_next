@@ -2,6 +2,7 @@
 
 import { SubmitErrorHandler, SubmitHandler } from 'react-hook-form';
 import { LoginInputs, useLoginForm } from './hooks/useLoginForm';
+import Link from 'next/link';
 
 export default function Login() {
   const { Email, Password, methods } = useLoginForm();
@@ -20,7 +21,7 @@ export default function Login() {
 
   return (
     <div className="w-full h-[calc(100vh-68px)] flex flex-col gap-4 justify-center items-center">
-      <h2 className="text-center text-2xl font-bold">로그인</h2>
+      <h2 className="text-2xl font-bold">로그인</h2>
       <form
         onSubmit={methods.handleSubmit(onValid, onInValid)}
         className="shadow rounded-xl p-8 flex flex-col gap-4 w-[500px]">
@@ -54,6 +55,9 @@ export default function Login() {
           className="btn bg-slate-900 text-white hover:text-black"
         />
       </form>
+      <Link href="/join" className="text-xs text-slate-400 underline mt-2">
+        <p>아직 회원이 아니신가요?</p>
+      </Link>
     </div>
   );
 }
