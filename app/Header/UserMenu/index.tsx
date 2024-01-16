@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-export const UserMenu = () => {
+export default function UserMenu() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogout = () => {
@@ -27,4 +27,4 @@ export const UserMenu = () => {
       </Link>
     </>
   );
-};
+}

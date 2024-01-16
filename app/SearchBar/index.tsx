@@ -3,7 +3,7 @@
 import { SubmitErrorHandler, SubmitHandler } from 'react-hook-form';
 import { SearchInputs, useSearchForm } from './hooks/useSearchForm';
 
-export const SearchBar = () => {
+export default function SearchBar() {
   const { Keyword, StartDate, EndDate, People, methods } = useSearchForm();
 
   const onValid: SubmitHandler<SearchInputs> = (data) => {
@@ -39,7 +39,7 @@ export const SearchBar = () => {
         <input
           {...Keyword}
           type="text"
-          placeholder="목적지를 입력해주세요"
+          placeholder="목적지를 입력해주세요."
           className="input border border-slate-300 w-60 max-w-xs focus:outline-none focus-within:outline-none h-12"
         />
       </div>
@@ -85,4 +85,4 @@ export const SearchBar = () => {
       </div>
     </form>
   );
-};
+}

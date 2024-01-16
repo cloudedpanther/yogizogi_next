@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { UserMenu } from './UserMenu';
+import UserMenu from './UserMenu';
 
-export const Header = () => {
+export default function Header() {
   return (
     <nav className="w-full fixed flex justify-between items-center pt-2 pb-3 px-16 shadow z-10">
       <Link href="/">
@@ -10,4 +10,4 @@ export const Header = () => {
       <UserMenu />
     </nav>
   );
-};
+}
