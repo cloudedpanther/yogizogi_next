@@ -38,7 +38,7 @@ export default function SearchBar() {
         <p className="font-bold mb-2 ml-1 text-slate-600">지역</p>
         <input
           {...Keyword}
-          type="text"
+          type="search"
           placeholder="목적지를 입력해주세요."
           className="input border border-slate-300 w-60 max-w-xs focus:outline-none focus-within:outline-none h-12"
         />
