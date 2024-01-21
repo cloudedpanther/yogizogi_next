@@ -71,7 +71,7 @@ export default function SearchBar() {
             {...People}
             type="number"
             readOnly
-            className="w-6 text-center ml-3"
+            className="w-6 text-center mx-1"
           />
           <button
             onClick={addPeople}

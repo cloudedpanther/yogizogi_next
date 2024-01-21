@@ -2,14 +2,17 @@ import {
   CategoryStyle,
   FormSectionLegendStyle,
   FormSectionStyle,
+  PriceStyle,
+  ResetButtonStyle,
   SortStyle,
+  SubmitButtonStyle,
 } from './constants';
 
 export default function AccommodationList() {
   return (
     <div className="w-[1024px] mx-auto flex flex-col gap-4">
       {/* 상세 검색 */}
-      <form className="mt-4 shadow rounded-xl p-4 grid grid-cols-2 gap-2">
+      <form className="mt-4 shadow rounded-xl p-4 flex items-center gap-2 text-xs font-bold">
         <section className={FormSectionStyle}>
           <p className={FormSectionLegendStyle}>카테고리</p>
           <div className="flex gap-2">
@@ -85,6 +88,21 @@ export default function AccommodationList() {
               />
             </label>
           </div>
+        </section>
+
+        <section className={FormSectionStyle}>
+          <p className={FormSectionLegendStyle}>가격 범위</p>
+          <div className="flex gap-2 items-center">
+            {/* TODO: step, min, max, default/placeholder 설정  */}
+            <input type="number" className={PriceStyle} />
+            <p className="text-zinc-300">~</p>
+            <input type="number" className={PriceStyle} />
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-2">
+          <input type="submit" value="검색" className={SubmitButtonStyle} />
+          <input type="reset" value="초기화" className={ResetButtonStyle} />
         </section>
       </form>
 
