@@ -1,3 +1,5 @@
+/* STYLES */
+
 export const FormSectionStyle =
   'flex items-center border-2 rounded-lg px-4 h-20 relative';
 
@@ -19,3 +21,26 @@ const BasicButtonStyle = 'w-24 h-9 rounded-lg cursor-pointer';
 export const SubmitButtonStyle = `${BasicButtonStyle} bg-zinc-300 border-2 border-zinc-500 hover:bg-zinc-400`;
 
 export const ResetButtonStyle = `${BasicButtonStyle} bg-white border-2 border-zinc-300 hover:bg-zinc-200`;
+
+//
+//
+//
+
+/* LITERALS */
+
+export const CategoryFactor = {
+  ALL: 'ALL',
+  HOTEL: 'HOTEL',
+  MOTEL: 'MOTEL',
+  COTTAGE: 'COTTAGE',
+} as const;
+
+export const SortFactor = {
+  RATE: 'RATE',
+  LOWPRICE: 'LOWPRICE',
+  HIGHPRICE: 'HIGHPRICE',
+} as const;
+
+export const MIN_PRICE = 0;
+
+export const MAX_PRICE = 1000000;
