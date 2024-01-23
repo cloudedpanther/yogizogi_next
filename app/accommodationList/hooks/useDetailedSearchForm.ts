@@ -1,12 +1,7 @@
 'use client';
 
 import { useController, useForm } from 'react-hook-form';
-import {
-  CategoryElement,
-  SortElement,
-  MAX_PRICE,
-  MIN_PRICE,
-} from '../constants';
+import { CATEGORY, MAX_PRICE, MIN_PRICE, SORT } from '../constants';
 import { CategoryType, SortType } from '../types';
 import { PRICE_ERROR_MESSAGE, PRICE_ORDER_ERROR_MESSAGE } from './errorMessage';
 
@@ -20,8 +15,8 @@ export type DetailedSearchInputs = {
 export const useDetailedSearchForm = () => {
   const methods = useForm<DetailedSearchInputs>({
     defaultValues: {
-      Category: CategoryElement.ALL.value,
-      Sort: SortElement.RATE.value,
+      Category: CATEGORY[0].value,
+      Sort: SORT[0].value,
       MinPrice: MIN_PRICE,
       MaxPrice: MAX_PRICE,
     },

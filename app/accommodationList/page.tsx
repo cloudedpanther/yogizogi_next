@@ -2,13 +2,13 @@
 
 import { SubmitErrorHandler, SubmitHandler } from 'react-hook-form';
 import {
-  CategoryList,
+  CATEGORY,
   CategoryStyle,
   FormSectionLegendStyle,
   FormSectionStyle,
   PriceStyle,
   ResetButtonStyle,
-  SortList,
+  SORT,
   SortStyle,
   SubmitButtonStyle,
 } from './constants';
@@ -44,7 +44,7 @@ export default function AccommodationList() {
         <section className={FormSectionStyle}>
           <p className={FormSectionLegendStyle}>카테고리</p>
           <div className="flex gap-2">
-            {CategoryList.map((category) => (
+            {CATEGORY.map((category) => (
               <label key={category.value} className={CategoryStyle}>
                 <p>{category.text}</p>
                 <input
@@ -62,7 +62,7 @@ export default function AccommodationList() {
         <section className={FormSectionStyle}>
           <p className={FormSectionLegendStyle}>정렬</p>
           <div className="flex gap-2">
-            {SortList.map((sort) => (
+            {SORT.map((sort) => (
               <label key={sort.value} className={SortStyle}>
                 <p>{sort.text}</p>
                 <input

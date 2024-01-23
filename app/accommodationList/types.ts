@@ -1,5 +1,5 @@
-import { CategoryElement, SortElement } from './constants';
+import { CATEGORY, SORT } from './constants';
 
-export type CategoryType = keyof typeof CategoryElement;
+export type CategoryType = (typeof CATEGORY)[number]['value'];
 
-export type SortType = keyof typeof SortElement;
+export type SortType = (typeof SORT)[number]['value'];
