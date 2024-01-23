@@ -28,18 +28,43 @@ export const ResetButtonStyle = `${BasicButtonStyle} bg-white border-2 border-zi
 
 /* LITERALS */
 
-export const CategoryFactor = {
-  ALL: 'ALL',
-  HOTEL: 'HOTEL',
-  MOTEL: 'MOTEL',
-  COTTAGE: 'COTTAGE',
+export const CategoryElement = {
+  ALL: {
+    value: 'ALL',
+    text: '전체',
+  },
+  HOTEL: {
+    value: 'HOTEL',
+    text: '호텔',
+  },
+  MOTEL: {
+    value: 'MOTEL',
+    text: '모텔',
+  },
+  COTTAGE: {
+    value: 'COTTAGE',
+    text: '펜션',
+  },
 } as const;
 
-export const SortFactor = {
-  RATE: 'RATE',
-  LOWPRICE: 'LOWPRICE',
-  HIGHPRICE: 'HIGHPRICE',
+export const CategoryList = Object.values(CategoryElement);
+
+export const SortElement = {
+  RATE: {
+    value: 'RATE',
+    text: '별점순',
+  },
+  LOW_PRICE: {
+    value: 'LOW_PRICE',
+    text: '낮은 가격순',
+  },
+  HIGH_PRICE: {
+    value: 'HIGH_PRICE',
+    text: '높은 가격순',
+  },
 } as const;
+
+export const SortList = Object.values(SortElement);
 
 export const MIN_PRICE = 0;
 
