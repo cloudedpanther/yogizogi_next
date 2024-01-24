@@ -98,7 +98,18 @@ export default function AccommodationList() {
       </form>
 
       {/* 숙소 목록 */}
-      <section className="w-full min-h-[500px] shadow rounded-xl"></section>
+      <section className="w-full min-h-[500px] shadow rounded-xl grid grid-cols-4 gap-1">
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+        <article className="w-[250px] h-[188px] shadow"></article>
+      </section>
     </div>
   );
 }
