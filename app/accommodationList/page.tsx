@@ -16,6 +16,7 @@ import {
   DetailedSearchInputs,
   useDetailedSearchForm,
 } from './hooks/useDetailedSearchForm';
+import Image from 'next/image';
 
 export default function AccommodationList() {
   const { Category, Sort, MinPrice, MaxPrice, methods } =
@@ -98,17 +99,26 @@ export default function AccommodationList() {
       </form>
 
       {/* 숙소 목록 */}
-      <section className="w-full min-h-[500px] shadow rounded-xl grid grid-cols-4 gap-1">
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
-        <article className="w-[250px] h-[188px] shadow"></article>
+      <section className="w-full min-h-[500px] grid grid-cols-3 gap-[12.5px]">
+        {Array.from({ length: 30 }, () => []).map((_, i) => (
+          <article
+            key={`article-${i}`}
+            className="w-[333px] h-[370px] shadow rounded-xl">
+            {/* TODO: fetch image (and use it as background maybe?) */}
+            <Image
+              src="/images/placeholder.png"
+              width={333}
+              height={222}
+              alt="placeholder"
+              className="rounded-t-xl"
+            />
+            <div>
+              <h4>역삼 인트로 호텔</h4>
+              <p>서울 강남구 테헤란로37길 13-11</p>
+              <p>300,000원</p>
+            </div>
+          </article>
+        ))}
       </section>
     </div>
   );
