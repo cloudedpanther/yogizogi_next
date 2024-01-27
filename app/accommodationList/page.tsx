@@ -21,6 +21,7 @@ import placeholder from '/public/images/placeholder.png';
 import { IconContext } from 'react-icons';
 import { GoStarFill } from 'react-icons/go';
 import { GoStar } from 'react-icons/go';
+import Link from 'next/link';
 
 export default function AccommodationList() {
   const { Category, Sort, MinPrice, MaxPrice, methods } =
@@ -109,42 +110,46 @@ export default function AccommodationList() {
           <article
             key={`article-${articleIndex}`}
             className="w-[333px] h-[370px] shadow rounded-xl">
-            {/* TODO: fetch image (and use it as background maybe?) */}
-            <Image
-              src={placeholder}
-              width={333}
-              height={222}
-              alt="placeholder"
-              className="rounded-t-xl"
-            />
-            <div className="p-4 font-bold">
-              <h4 className="text-lg">역삼 인트로 호텔</h4>
-              <small className="text-xs font-normal text-zinc-500">
-                서울 강남구 테헤란로37길 13-11
-              </small>
-              <div className="relative w-20 flex gap-1 mt-2">
-                <div className="flex">
-                  <IconContext.Provider value={{ className: 'text-zinc-300' }}>
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <GoStar key={`star-${articleIndex}-${starIndex}`} />
-                    ))}
-                  </IconContext.Provider>
-                </div>
+            {/* TODO: place accommodationId in url */}
+            <Link href={`/accommodation/:accommodationId`}>
+              {/* TODO: fetch image (and use it as background maybe?) */}
+              <Image
+                src={placeholder}
+                width={333}
+                height={222}
+                alt="placeholder"
+                className="rounded-t-xl"
+              />
+              <div className="p-4 font-bold">
+                <h4 className="text-lg">역삼 인트로 호텔</h4>
+                <small className="text-xs font-normal text-zinc-500">
+                  서울 강남구 테헤란로37길 13-11
+                </small>
+                <div className="relative w-20 flex gap-1 mt-2">
+                  <div className="flex">
+                    <IconContext.Provider
+                      value={{ className: 'text-zinc-300' }}>
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <GoStar key={`star-${articleIndex}-${starIndex}`} />
+                      ))}
+                    </IconContext.Provider>
+                  </div>
 
-                {/* TODO: get rate and apply to width */}
-                <div className="flex absolute top-0 left-0 overflow-hidden w-[88%]">
-                  <IconContext.Provider
-                    value={{ className: 'text-amber-300 flex-none' }}>
-                    {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <GoStarFill key={`star-${articleIndex}-${starIndex}`} />
-                    ))}
-                  </IconContext.Provider>
-                </div>
+                  {/* TODO: get rate and apply to width */}
+                  <div className="flex absolute top-0 left-0 overflow-hidden w-[88%]">
+                    <IconContext.Provider
+                      value={{ className: 'text-amber-300 flex-none' }}>
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <GoStarFill key={`star-${articleIndex}-${starIndex}`} />
+                      ))}
+                    </IconContext.Provider>
+                  </div>
 
-                <p className="font-normal text-xs text-zinc-700">4.1</p>
+                  <p className="font-normal text-xs text-zinc-700">4.1</p>
+                </div>
+                <p className="text-end text-2xl">300,000원</p>
               </div>
-              <p className="text-end text-2xl">300,000원</p>
-            </div>
+            </Link>
           </article>
         ))}
       </section>
