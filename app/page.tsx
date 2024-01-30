@@ -1,4 +1,9 @@
+import { Metadata } from 'next';
 import SearchBar from './SearchBar';
+
+export const metadata: Metadata = {
+  title: 'Home',
+};
 
 export default function Home() {
   return (

@@ -111,7 +111,7 @@ export default function AccommodationList() {
             key={`article-${articleIndex}`}
             className="w-[333px] h-[370px] shadow rounded-xl">
             {/* TODO: place accommodationId in url */}
-            <Link href={`/accommodation/:accommodationId`}>
+            <Link href={`/accommodation/${articleIndex}`}>
               {/* TODO: fetch image (and use it as background maybe?) */}
               <Image
                 src={placeholder}

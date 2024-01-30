@@ -2,7 +2,6 @@
 
 import { SubmitErrorHandler, SubmitHandler } from 'react-hook-form';
 import { JoinInputs, useJoinForm } from './hooks/useJoinForm';
-
 export default function Join() {
   const { Name, Email, Password, PasswordCheck, methods } = useJoinForm();
 

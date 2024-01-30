@@ -6,8 +6,8 @@ import Header from './Header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Yogizogi',
-  description: 'For quick comparision and reservation.',
+  title: '%s | Yogizogi',
+  description: 'For quick comparison and reservation.',
   icons: {
     icon: './icon.png',
   },
