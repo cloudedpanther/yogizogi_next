@@ -18,10 +18,8 @@ import {
 } from './hooks/useDetailedSearchForm';
 import Image from 'next/image';
 import placeholder from '/public/images/placeholder.png';
-import { IconContext } from 'react-icons';
-import { GoStarFill } from 'react-icons/go';
-import { GoStar } from 'react-icons/go';
 import Link from 'next/link';
+import RatingStar from '../RatingStar';
 
 export default function AccommodationList() {
   const { Category, Sort, MinPrice, MaxPrice, methods } =
@@ -125,28 +123,7 @@ export default function AccommodationList() {
                 <small className="text-xs font-normal text-zinc-500">
                   서울 강남구 테헤란로37길 13-11
                 </small>
-                <div className="relative w-20 flex gap-1 mt-2">
-                  <div className="flex">
-                    <IconContext.Provider
-                      value={{ className: 'text-zinc-300' }}>
-                      {Array.from({ length: 5 }).map((_, starIndex) => (
-                        <GoStar key={`star-${articleIndex}-${starIndex}`} />
-                      ))}
-                    </IconContext.Provider>
-                  </div>
-
-                  {/* TODO: get rate and apply to width */}
-                  <div className="flex absolute top-0 left-0 overflow-hidden w-[88%]">
-                    <IconContext.Provider
-                      value={{ className: 'text-amber-300 flex-none' }}>
-                      {Array.from({ length: 5 }).map((_, starIndex) => (
-                        <GoStarFill key={`star-${articleIndex}-${starIndex}`} />
-                      ))}
-                    </IconContext.Provider>
-                  </div>
-
-                  <p className="font-normal text-xs text-zinc-700">4.1</p>
-                </div>
+                <RatingStar id={String(articleIndex)} className="mt-2" />
                 <p className="text-end text-2xl">300,000원</p>
               </div>
             </Link>
