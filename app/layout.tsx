@@ -6,7 +6,10 @@ import Header from './Header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '%s | Yogizogi',
+  title: {
+    template: '%s | Yogizogi',
+    default: 'Yogizogi',
+  },
   description: 'For quick comparison and reservation.',
   icons: {
     icon: './icon.png',

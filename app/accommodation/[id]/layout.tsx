@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Accommodation Details',
+  // TODO: move to page.tsx and use getMetadata to use accommodation name in title
+  title: 'Accommodation',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
