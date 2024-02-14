@@ -123,7 +123,11 @@ export default function AccommodationList() {
                 <small className="text-xs font-normal text-zinc-500">
                   서울 강남구 테헤란로37길 13-11
                 </small>
-                <RatingStar id={String(articleIndex)} className="mt-2" />
+                <RatingStar
+                  id={String(articleIndex)}
+                  className="mt-2"
+                  rate={4.1}
+                />
                 <p className="text-end text-2xl">300,000원</p>
               </div>
             </Link>
